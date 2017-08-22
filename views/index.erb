@@ -1,0 +1,14 @@
+<h1> All the pizza' goes here</h1>
+
+<% for pizza in @pizzas do %>
+  <p>name: <%=pizza.pretty_name%></p>
+  <p>pizza order <%= pizza.quantity %> x <%= pizza.topping%></p>
+  <p><a href="/pizzas/<%= pizza.id %>">Show Za' order</a></p>
+
+  <form action="/pizzas/<%=pizza.id%>/delete" method="POST">
+    <label for="delete-order">cancel order:</label>
+    <input type="submit" name="" id ="delete-order">
+  </form>
+  <p><a href="/pizzas/<%= pizza.id %>/edit">edit</a></p>
+  <hr/>
+<% end  %>

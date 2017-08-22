@@ -1,0 +1,29 @@
+<p>your current order you wish to edit</p>
+<p>first name: <%= @pizza.first_name %></p>
+<p>last name: <%= @pizza.last_name %></p>
+<p>topping: <%= @pizza.topping %></p>
+<p>quantity: <%= @pizza.quantity %></p>
+
+<p> updated choices</p>
+
+<form action="/pizzas/<%= @pizza.id%>" method="POST">
+  <label for="first-name-field"> <%=@pizza.first_name%>:</label>
+  <input type="text" name="" id ="first-name-field">
+
+  <label for="last-name-field"><%=@pizza.last_name%>:</label>
+  <input id="last-name-field" type="text" name="last_name">
+
+
+  <label for="pizza-select"><%=@pizza.topping%>:</label>
+    <select id="pizza-select" name="topping">
+      <option value="Margherita">Margherita</option>
+      <option value="Calzone">Calzone</option>
+    </select>
+
+
+  <label for="quantity"><%=@pizza.quantity%>:</label>
+  <input id="quantity" type="number" name="quantity"/>
+
+  <input type="submit" name="" value="update"/>
+
+</form>
